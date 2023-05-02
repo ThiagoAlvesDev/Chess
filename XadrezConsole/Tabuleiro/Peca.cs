@@ -16,9 +16,9 @@ namespace Tabuleiro
 
         public Peca ( Cor cor, OTabuleiro tab)
         {
-            this.Posicao = null;
-            this.Cor = cor;
-            this.Tab = tab;
+            Posicao = null;
+            Cor = cor;
+            Tab = tab;
             QteMovimentos = 0;
         }
     }
