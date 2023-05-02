@@ -8,6 +8,8 @@ namespace XadrezConsole
         {
             OTabuleiro tab = new OTabuleiro(8, 8);
 
+            Tela.ImprimirTabuleiro(tab);
+
           
         }
     }
