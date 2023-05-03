@@ -24,6 +24,10 @@ namespace XadrezConsole
             //    Console.WriteLine(ex.Message);
             //}
 
+            OTabuleiro tab = new OTabuleiro(8, 8);
+
+            Tela.ImprimirTabuleiro(tab);
+
             PosicaoXadrez pos = new PosicaoXadrez('c', 3);
 
             Console.WriteLine(pos);

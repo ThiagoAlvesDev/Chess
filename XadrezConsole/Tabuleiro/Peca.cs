@@ -14,7 +14,7 @@ namespace Tabuleiro
         public int QteMovimentos { get; protected set; }
         public OTabuleiro Tab { get; protected set; }
 
-        public Peca ( Cor cor, OTabuleiro tab)
+        public Peca ( OTabuleiro tab, Cor cor)
         {
             Posicao = null;
             Cor = cor;

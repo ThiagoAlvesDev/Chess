@@ -10,7 +10,7 @@ namespace Xadrez
 {
     internal class Rei : Peca
     {
-        public Rei(OTabuleiro tab, Cor cor) : base (cor, tab)
+        public Rei(OTabuleiro tab, Cor cor) : base (tab, cor)
         {
 
         }
