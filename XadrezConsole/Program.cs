@@ -1,5 +1,5 @@
 ﻿using Tabuleiro;
-using Xadrez; 
+using Xadrez;
 using Tabuleiro.Enums;
 
 namespace XadrezConsole
@@ -8,17 +8,26 @@ namespace XadrezConsole
     {
         static void Main(string[] args)
         {
-            OTabuleiro tab = new OTabuleiro(8, 8);
 
             try
             {
 
-                tab.ColocarPeca(new Torre(tab, Cor.Preto), new Posicao(0, 0));
-                tab.ColocarPeca(new Torre(tab, Cor.Preto), new Posicao(1, 3));
-                tab.ColocarPeca(new Rei(tab, Cor.Preto), new Posicao(0, 1));
-                tab.ColocarPeca(new Torre(tab, Cor.Branco), new Posicao(7, 0));
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                Tela.ImprimirTabuleiro(tab);
+                while (!partida.Terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.Tab);
+                    
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
+
+                    partida.ExecutaMovimento(origem, destino); 
+                }
+
+
             }
             catch (TabuleiroException ex)
             {
