@@ -14,5 +14,10 @@ namespace Xadrez
         {
             return "T";
         }
+
+        public override bool[,] MovimentosPossiveis()
+        {
+            return null;
+        }
     }
 }
