@@ -18,13 +18,19 @@ namespace XadrezConsole
                 {
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.Tab);
-                    
+
                     Console.Write("Origem: ");
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+
+                    bool[,] posicoesPossiveis = partida.Tab.Peca(origem).MovimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.Tab, posicoesPossiveis);
+
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
 
-                    partida.ExecutaMovimento(origem, destino); 
+                    partida.ExecutaMovimento(origem, destino);
                 }
 
 
@@ -38,11 +44,11 @@ namespace XadrezConsole
 
             //Tela.ImprimirTabuleiro(tab);
 
-            //PosicaoXadrez pos = new PosicaoXadrez('c', 3);
+            //PosicaoXadrez pos = new PosicaoXadrez('a', 1);
 
             //Console.WriteLine(pos);
             //Console.WriteLine(pos.ToPosicao());
-            //Console.ReadLine(); 
+            //Console.ReadLine();
 
 
         }
