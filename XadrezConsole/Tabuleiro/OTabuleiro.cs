@@ -31,7 +31,7 @@ namespace Tabuleiro
         }
 
         public bool ExistePeca(Posicao pos)
-        {
+        {   
             ValidarPosicao(pos);
             return Peca(pos) != null;
         }
