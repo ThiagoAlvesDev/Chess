@@ -200,7 +200,7 @@ namespace Xadrez
 
         public void ValidarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!Tab.Peca(origem).PodeMoverPara(destino))
+            if (!Tab.Peca(origem).MovimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posicao de destino inválida!");
             }
@@ -227,13 +227,15 @@ namespace Xadrez
         {
             //branco
             ColocarNovaPeca('a', 1, new Torre(Tab, Cor.Branco));
-            ColocarNovaPeca('c', 1, new Rei(Tab, Cor.Branco));
+            ColocarNovaPeca('e', 1, new Rei(Tab, Cor.Branco));
             ColocarNovaPeca('h', 1, new Torre(Tab, Cor.Branco));
+            ColocarNovaPeca('d', 1, new Dama(Tab, Cor.Branco));
 
             //preto
-            //ColocarNovaPeca('a', 8, new Torre(Tab, Cor.Preto));
-            ColocarNovaPeca('h', 8, new Rei(Tab, Cor.Preto));
+            ColocarNovaPeca('a', 8, new Torre(Tab, Cor.Preto));
+            ColocarNovaPeca('e', 8, new Rei(Tab, Cor.Preto));
             ColocarNovaPeca('g', 8, new Torre(Tab, Cor.Preto));
+            ColocarNovaPeca('d', 8, new Dama(Tab, Cor.Preto));
 
         }
     }
