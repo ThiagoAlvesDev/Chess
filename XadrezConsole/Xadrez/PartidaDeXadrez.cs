@@ -38,6 +38,26 @@ namespace Xadrez
             {
                 Capturadas.Add(pecaCapturada);
             }
+
+            // JogadaEspecial roque pequeno
+            if(p is Rei && destino.Coluna == origem.Coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca T = Tab.RetirarPeca(origem);
+                T.IncrementarQuantidadeMovimento();
+                Tab.ColocarPeca(T, destinoT);
+            }
+
+            // JogadaEspecial roque Grande
+            if(p is Rei && destino.Coluna == origem.Coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca T = Tab.RetirarPeca(origemT);
+                T.IncrementarQuantidadeMovimento();
+                Tab.ColocarPeca(T, destinoT);
+            }
             return pecaCapturada;
         }
 
@@ -51,6 +71,26 @@ namespace Xadrez
                 Capturadas.Remove(pecaCapturada);
             }
             Tab.ColocarPeca(p, origem);
+
+            //JogadaEspecial roque pequeno
+            if(p is Rei && destino.Coluna == origem.Coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca T = Tab.RetirarPeca(destinoT);
+                T.DecrementarQuantidadeMovimento();
+                Tab.ColocarPeca(T, origemT);
+            }
+
+            // JogadaEspecia roque grande
+            if(p is Rei && destino.Coluna == origem.Coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca T = Tab.RetirarPeca(destinoT);
+                T.DecrementarQuantidadeMovimento();
+                Tab.ColocarPeca(T, origemT);
+            }
         }
 
         public HashSet<Peca> PecasCapturadas(Cor cor)
