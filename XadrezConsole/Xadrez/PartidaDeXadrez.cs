@@ -44,7 +44,7 @@ namespace Xadrez
             {
                 Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
                 Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
-                Peca T = Tab.RetirarPeca(origem);
+                Peca T = Tab.RetirarPeca(origemT);
                 T.IncrementarQuantidadeMovimento();
                 Tab.ColocarPeca(T, destinoT);
             }
@@ -271,7 +271,7 @@ namespace Xadrez
             ColocarNovaPeca('b', 1, new Cavalo(Tab, Cor.Branco));
             ColocarNovaPeca('c', 1, new Bispo(Tab, Cor.Branco));
             ColocarNovaPeca('d', 1, new Dama(Tab, Cor.Branco));
-            ColocarNovaPeca('e', 1, new Rei(Tab, Cor.Branco));
+            ColocarNovaPeca('e', 1, new Rei(Tab, this, Cor.Branco));
             ColocarNovaPeca('f', 1, new Bispo(Tab, Cor.Branco));
             ColocarNovaPeca('g', 1, new Cavalo(Tab, Cor.Branco));
             ColocarNovaPeca('h', 1, new Torre(Tab, Cor.Branco));
@@ -289,7 +289,7 @@ namespace Xadrez
             ColocarNovaPeca('b', 8, new Cavalo(Tab, Cor.Preto));
             ColocarNovaPeca('c', 8, new Bispo(Tab, Cor.Preto));
             ColocarNovaPeca('d', 8, new Dama(Tab, Cor.Preto));
-            ColocarNovaPeca('e', 8, new Rei(Tab, Cor.Preto));
+            ColocarNovaPeca('e', 8, new Rei(Tab,this, Cor.Preto));
             ColocarNovaPeca('f', 8, new Bispo(Tab, Cor.Preto));
             ColocarNovaPeca('g', 8, new Cavalo(Tab, Cor.Preto));
             ColocarNovaPeca('h', 8, new Torre(Tab, Cor.Preto));
